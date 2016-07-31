@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Andrey's Physics Cannon</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <canvas id="canvas" width="800" height="600"></canvas>
+            <div class="controls">
+                <div id="play-btn" class="btn">Play</div>
+                <div id="pause-btn" class="btn">Pause</div>
+                <div id="step-btn" class="btn">Step</div>
+                <div id="reset-btn" class="btn">Reset</div>
+            </div>
+            <div class="formulas">
+                <div class="values vector-container">
+                    <h1>Configuration</h1>
+                    <div class="vector">
+                        <div class="dimension">
+                            <span>These determine initial velocity:</span>
+                            <span>v<sub>0</sub> = <input type="text" id="velocity"></span>
+                            <span>&theta; = <input type="text" id="angle">&deg;</span>
+                            <span></span>
+                            <span>This determines initial height:</span>
+                            <span>y<sub>0</sub> = <input type="text" id="height"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="position vector-container">
+                    <h1>Position</h1>
+                    <div class="vector">
+                        <div class="position-x dimension">
+                            <h2>x-coordinate</h2>
+                            <span>x = x<sub>0</sub> + v<sub>x 0</sub> &middot; t + &frac12; &middot; a<sub>x</sub> &middot; t<sup>2</sup></span>
+                            <span>x = <span id="x0"></span> + <span id="vx0"></span> &middot; <span id="t"></span> + &frac12; &middot; <span id="ax0"></span> &middot; <span id="t"></span><sup>2</sup></span>
+                            <span>x<sub>simulated</sub> = <span id="x"></span></span>
+                            <span>x<sub>calculated</sub> = <span id="x-calc"></span></span>
+                        </div>
+                        <div class="position-y dimension">
+                            <h2>y-coordinate</h2>
+                            <span>y = y<sub>0</sub> + v<sub> y 0</sub> &middot; t + &frac12; &middot; a<sub>y</sub> &middot; t<sup>2</sup></span>
+                            <span>y = <span id="y0"></span> + <span id="vy0"></span> &middot; <span id="t"></span> + &frac12; &middot; <span id="ay0"></span> &middot; <span id="t"></span><sup>2</sup></span>
+                            <span>y<sub>simulated</sub> = <span id="y"></span></span>
+                            <span>y<sub>calculated</sub> = <span id="y-calc"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="position vector-container">
+                    <h1>Velocity</h1>
+                    <div class="vector">
+                        <div class="position-x dimension">
+                            <h2>x-coordinate</h2>
+                            <span>v<sub>x</sub> = v<sub>x 0</sub> + a<sub>x</sub> &middot; t</span>
+                            <span>v<sub>x</sub> = <span id="vx0"></span> + <span id="ax"></span> &middot; <span id="t"></span></span>
+                            <span>v<sub>x simulated</sub> = <span id="vx"></span></span>
+                            <span>v<sub>x calculated</sub> = <span id="vx-calculated"></span></span>
+                        </div>
+                        <div class="position-y dimension">
+                            <h2>y-coordinate</h2>
+                            <span>v<sub>y</sub> = v<sub>y 0</sub> + a<sub>y</sub> &middot; t</span>
+                            <span>v<sub>y</sub> = <span id="vy0"></span> + <span id="ay"></span> &middot; <span id="t"></span></span>
+                            <span>v<sub>y simulated</sub> = <span id="vy"></span></span>
+                            <span>v<sub>y calculated</sub> = <span id="vy-calculated"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="position vector-container">
+                    <h1>Acceleration</h1>
+                    <div class="vector">
+                        <div class="position-x dimension">
+                            <h2>x-coordinate</h2>
+                            <span>a<sub>x</sub> is constant</span>
+                            <span>a<sub>x calculated</sub> = <span id="ax0"></span></span>
+                            <span>a<sub>x simulated</sub> = <span id="ax"></span></span>
+                        </div>
+                        <div class="position-y dimension">
+                            <h2>y-coordinate</h2>
+                            <span>a<sub>y</sub> is constant</span>
+                            <span>a<sub>y calculated</sub> = <span id="ay0"></span></span>
+                            <span>a<sub>y simulated</sub> = <span id="ay"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="javascript/vars.js"></script>
+        <script src="javascript/helpers.js"></script>
+        <script src="javascript/simulation.js"></script>
+    </body>
+</html>

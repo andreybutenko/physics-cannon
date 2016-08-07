@@ -36,6 +36,18 @@ body {
                 margin-bottom: 5px;
             }
 
+            .formulas .vector-container .vector .dimension > span.scenario-btn {
+                transition: all 250ms;
+                background-color: #ddd;
+                padding: 0.5em;
+                cursor: pointer;
+            }
+
+            .formulas .vector-container .vector .dimension > span.scenario-btn:hover {
+                background-color: #ccc;
+                padding-left: 0.7em;
+            }
+
 .controls {
     text-align: center;
     -webkit-touch-callout: none;

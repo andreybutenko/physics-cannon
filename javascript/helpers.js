@@ -173,3 +173,7 @@ document.getElementById('angle').addEventListener('keyup', function stepBtnClick
 document.getElementById('velocity').addEventListener('keyup', function stepBtnClick() { initialVelocity = parseInt(document.getElementById('velocity').value) || 0; reset(); });
 document.getElementById('height').addEventListener('keyup', function stepBtnClick() { cliffHeight = parseInt(document.getElementById('height').value) || 0; reset(); });
 document.getElementById('step-size').addEventListener('keyup', function stepBtnClick() { stepSize = parseInt(document.getElementById('step-size').value) || 0; });
+document.getElementById('default-scenario').addEventListener('click', function stepBtnClick() { cliffHeight = 500; angle = 0; initialVelocity = 0; reset(); });
+document.getElementById('horizontal-scenario').addEventListener('click', function stepBtnClick() { cliffHeight = 500; angle = 0; initialVelocity = 100; reset(); });
+document.getElementById('angled-scenario').addEventListener('click', function stepBtnClick() { cliffHeight = 100; angle = 40; initialVelocity = 100; reset(); });
+document.getElementById('upwards-scenario').addEventListener('click', function stepBtnClick() { cliffHeight = 1; angle = 90; initialVelocity = 100; reset(); });

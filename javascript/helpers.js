@@ -14,16 +14,10 @@ function cosDeg(deg) {
 
 function scale(x, coord) {
     if(coord == 'x') {
-        var scaleFactor = (x < opts.width) ?
-            1 : // if x is less than pixel width of canvas
-            opts.width / x - 50; // if x is greater than pixel width of canvas
-        return x * scaleFactor + 100;
+        return x + 100;
     }
     else {
-        var scaleFactor = (x < opts.height) ?
-            1 : // if x is less than pixel height of canvas
-            opts.height / x - 50; // if x is greater than pixel height of canvas
-        return opts.height - (x * scaleFactor + 50);
+        return opts.height - (x + 50);
     }
 }
 

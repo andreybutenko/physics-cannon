@@ -83,6 +83,8 @@ function updateText() {
     setTextbox('#angle', angle);
     setTextbox('#velocity', initialVelocity);
     setTextbox('#height', cliffHeight);
+
+    setTextbox('#step-size', stepSize);
 }
 
 function setText(query, text) {
@@ -164,8 +166,9 @@ function recalculateInitial() {
 
 document.getElementById('play-btn').addEventListener('click', function playBtnClick() { startSimulation(); });
 document.getElementById('pause-btn').addEventListener('click', function pauseBtnClick() { stopSimulation(); });
-document.getElementById('step-btn').addEventListener('click', function stepBtnClick() { setup(); tick(1000); });
+document.getElementById('step-btn').addEventListener('click', function stepBtnClick() { setup(); tick(stepSize); });
 document.getElementById('reset-btn').addEventListener('click', function stepBtnClick() { reset(); });
 document.getElementById('angle').addEventListener('keyup', function stepBtnClick() { angle = parseInt(document.getElementById('angle').value) || 0; reset(); });
 document.getElementById('velocity').addEventListener('keyup', function stepBtnClick() { initialVelocity = parseInt(document.getElementById('velocity').value) || 0; reset(); });
 document.getElementById('height').addEventListener('keyup', function stepBtnClick() { cliffHeight = parseInt(document.getElementById('height').value) || 0; reset(); });
+document.getElementById('step-size').addEventListener('keyup', function stepBtnClick() { stepSize = parseInt(document.getElementById('step-size').value) || 0; });

@@ -144,13 +144,14 @@ function clearScreen() {
         }
     }
 
-    var length = 60;
-    ctx.strokeStyle = opts.angleColor;
-    ctx.fillStyle = opts.angleColor;
-    ctx.moveTo(scale(0, 'x'), scale(cliffHeight, 'y'));
-    ctx.lineTo(scale(length * cosDeg(angle), 'x'), scale(cliffHeight + length * sinDeg(angle), 'y'));
-
-    ctx.stroke();
+    if(initialVelocity != 0) {
+        var length = 60;
+        ctx.strokeStyle = opts.angleColor;
+        ctx.fillStyle = opts.angleColor;
+        ctx.moveTo(scale(0, 'x'), scale(cliffHeight, 'y'));
+        ctx.lineTo(scale(length * cosDeg(angle), 'x'), scale(cliffHeight + length * sinDeg(angle), 'y'));
+        ctx.stroke();
+    }
 }
 
 // calculate initial acceleration

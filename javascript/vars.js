@@ -9,7 +9,7 @@ var opts = {
     width: window.innerWidth,
     height: 600,
     initialAngle: 0,
-    initialVelocity: 20
+    initialVelocity: 0
 };
 
 // reference to the canvas

@@ -6,7 +6,6 @@ var opts = {
     ballColor: 'red',
     textColor: 'black',
     angleColor: 'blue',
-    fps: 5,
     width: window.innerWidth,
     height: 600,
     initialAngle: 0,
@@ -26,7 +25,10 @@ var timer;
 var angle = opts.initialAngle;
 var initialVelocity = opts.initialVelocity;
 var velocity = { x: 0, y: 0 };
-var ticks = 0;
+var time = 0;
 var initialBall;
 var ball;
 var cliffHeight = 500;
+
+var lastFrame = null;
+var running = false;

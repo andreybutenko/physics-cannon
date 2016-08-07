@@ -54,6 +54,8 @@ class Vector {
 // related to text showing formulas
 
 function updateText() {
+    var ticks = time / 1000;
+
     setText('#t', ticks);
 
     setText('#x', ball.position.x);
@@ -162,8 +164,8 @@ function recalculateInitial() {
 
 document.getElementById('play-btn').addEventListener('click', function playBtnClick() { startSimulation(); });
 document.getElementById('pause-btn').addEventListener('click', function pauseBtnClick() { stopSimulation(); });
-document.getElementById('step-btn').addEventListener('click', function stepBtnClick() { setup(); tick(); });
-document.getElementById('reset-btn').addEventListener('click', function stepBtnClick() { setup(true); tick(); });
-document.getElementById('angle').addEventListener('keyup', function stepBtnClick() { angle = parseInt(document.getElementById('angle').value) || 0; recalculateInitial(); });
-document.getElementById('velocity').addEventListener('keyup', function stepBtnClick() { initialVelocity = parseInt(document.getElementById('velocity').value) || 0; recalculateInitial(); });
-document.getElementById('height').addEventListener('keyup', function stepBtnClick() { cliffHeight = parseInt(document.getElementById('height').value) || 0; setup(true); tick(); });
+document.getElementById('step-btn').addEventListener('click', function stepBtnClick() { setup(); tick(1000); });
+document.getElementById('reset-btn').addEventListener('click', function stepBtnClick() { reset(); });
+document.getElementById('angle').addEventListener('keyup', function stepBtnClick() { angle = parseInt(document.getElementById('angle').value) || 0; reset(); });
+document.getElementById('velocity').addEventListener('keyup', function stepBtnClick() { initialVelocity = parseInt(document.getElementById('velocity').value) || 0; reset(); });
+document.getElementById('height').addEventListener('keyup', function stepBtnClick() { cliffHeight = parseInt(document.getElementById('height').value) || 0; reset(); });

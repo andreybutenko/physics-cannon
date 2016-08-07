@@ -19,9 +19,9 @@ class Ball {
         this.acceleration = vector;
     }
 
-    recalculate() {
-        this.position.add(this.velocity);
-        this.velocity.add(this.acceleration);
+    recalculate(delta) {
+        this.position.add(this.velocity.clone().scale(delta));
+        this.velocity.add(this.acceleration.clone().scale(delta));
     }
 
     redraw() {
@@ -36,15 +36,18 @@ class Ball {
     }
 }
 
+function tick(delta) {
+    if(typeof delta == 'undefined') {
+        delta = 0;
+    }
 
+    time += delta;
+    delta = delta / 1000;
 
-function tick() {
     if(ball.position.y <= 0) {
         return;
     }
-    
-    ticks++;
-    if(ticks > 0) ball.recalculate();
+    if(time > 0) ball.recalculate(delta);
     clearScreen();
     ball.redraw();
 
@@ -55,13 +58,35 @@ function tick() {
     }
 }
 
+function step() {
+    var now = new Date().getTime();
+
+    if(lastFrame == null) {
+        lastFrame = now;
+        next();
+        return;
+    }
+
+    var delta = now - lastFrame;
+    lastFrame = now;
+
+    tick(delta);
+    next();
+}
+
 function startSimulation() {
+    lastFrame = null;
     setup();
-    timer = setInterval(tick, 1000 / opts.fps);
+    running = true;
+    next();
+}
+
+function next() {
+    if(running) window.requestAnimationFrame(step);
 }
 
 function stopSimulation() {
-    clearInterval(timer);
+    running = false;
 }
 
 function setup(force) {
@@ -75,10 +100,16 @@ function setup(force) {
         initialBall.setPosition(ball.position.clone());
         initialBall.setVelocity(ball.velocity.clone());
         initialBall.setAcceleration(ball.acceleration.clone());
-        ticks = -1;
+        time = 0;
     }
+}
+
+function reset() {
+    recalculateInitial();
+    setup(true);
+    stopSimulation();
+    tick(0);
 }
 
 recalculateInitial();
 setup(true);
-tick();

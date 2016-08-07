@@ -70,6 +70,13 @@ function step() {
     var delta = now - lastFrame;
     lastFrame = now;
 
+    if(stopTime != 0 && time + delta > stopTime) {
+        delta = stopTime - time;
+        tick(delta);
+        stopSimulation();
+        return;
+    }
+
     tick(delta);
     next();
 }

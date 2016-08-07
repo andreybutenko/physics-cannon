@@ -83,7 +83,7 @@ function updateText() {
 }
 
 function setText(query, text) {
-    if(typeof text == 'number') text = text.toFixed(2);
+    if(typeof text == 'number' && opts.roundDecimals) text = text.toFixed(2);
     var elements = document.querySelectorAll(query);
     for (var i = 0; i < elements.length; i++) {
         elements[i].innerHTML = String(text);
@@ -161,6 +161,7 @@ function recalculateInitial() {
 // controls
 
 window.addEventListener('resize', function resizeWindow() { opts.width = window.innerWidth; canvas.width = opts.width; clearScreen(); ball.redraw(); });
+document.getElementById('round-decimals').addEventListener('click', function roundDecimalsClick() { opts.roundDecimals = !opts.roundDecimals; updateText(); });
 document.getElementById('play-btn').addEventListener('click', function playBtnClick() { startSimulation(); });
 document.getElementById('pause-btn').addEventListener('click', function pauseBtnClick() { stopSimulation(); });
 document.getElementById('step-btn').addEventListener('click', function stepBtnClick() { setup(); tick(stepSize); });

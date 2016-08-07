@@ -78,6 +78,7 @@ function updateText() {
     setTextbox('#velocity', initialVelocity);
     setTextbox('#height', cliffHeight);
 
+    setTextbox('#stop-time', stopTime);
     setTextbox('#step-size', stepSize);
 }
 
@@ -167,6 +168,7 @@ document.getElementById('angle').addEventListener('keyup', function angleValChan
 document.getElementById('velocity').addEventListener('keyup', function velocityValChange() { initialVelocity = parseInt(document.getElementById('velocity').value) || 0; reset(); });
 document.getElementById('height').addEventListener('keyup', function heightValChange() { cliffHeight = parseInt(document.getElementById('height').value) || 0; reset(); });
 document.getElementById('step-size').addEventListener('keyup', function stepValChange() { stepSize = parseInt(document.getElementById('step-size').value) || 0; });
+document.getElementById('stop-time').addEventListener('keyup', function stopValChange() { stopTime = parseInt(document.getElementById('stop-time').value) || 0; reset(); });
 document.getElementById('default-scenario').addEventListener('click', function defaultScenarioClick() { cliffHeight = 500; angle = 0; initialVelocity = 0; reset(); });
 document.getElementById('horizontal-scenario').addEventListener('click', function horizontalScenarioClick() { cliffHeight = 500; angle = 0; initialVelocity = 100; reset(); });
 document.getElementById('angled-scenario').addEventListener('click', function angledScenarioClick() { cliffHeight = 100; angle = 40; initialVelocity = 100; reset(); });

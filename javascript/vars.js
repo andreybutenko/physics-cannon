@@ -30,6 +30,7 @@ var initialBall;
 var ball;
 var cliffHeight = 500;
 var stepSize = 1000;
+var stopTime = 0;
 
 var lastFrame = null;
 var running = false;

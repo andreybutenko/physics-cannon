@@ -5,48 +5,80 @@ body {
     font-family: monospace;
 }
 
+.main-view {
+    display: flex;
+    flex-direction: row;
+}
+
+    .main-view .formulas {
+        flex: 0 0 200px;
+    }
+
+        .main-view .formulas .vector-container {
+            flex-basis: 200px;
+        }
+
+            .main-view .formulas .vector-container .vector {
+                width: 100%;
+            }
+
+                .main-view .formulas .vector-container .vector .dimension {
+                    width: 100%;
+                }
+
 .formulas {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-    .formulas .vector-container h1 {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    .formulas .vector-container .vector {
+    .formulas .vector-container {
+        flex: 1 0 33%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
     }
 
-        .formulas .vector-container .vector .dimension {
-            padding: 5px;
-            border: 1px solid #ccc;
+        .formulas .vector-container h1 {
+            font-size: 1.5em;
+            text-align: center;
         }
 
-            .formulas .vector-container .vector .dimension h2 {
-                font-size: 1.2em;
-                text-align: center;
+        .formulas .vector-container .vector {
+            display: flex;
+            flex-direction: row;
+        }
+
+            .formulas .vector-container .vector .dimension {
+                padding: 5px;
+                border: 1px solid #ccc;
             }
 
-            .formulas .vector-container .vector .dimension > span {
-                display: block;
-                margin-bottom: 5px;
-            }
+                .formulas .vector-container .vector .dimension h2 {
+                    font-size: 1.2em;
+                    text-align: center;
+                }
 
-            .formulas .vector-container .vector .dimension > span.scenario-btn {
-                transition: all 250ms;
-                background-color: #ddd;
-                padding: 0.5em;
-                cursor: pointer;
-            }
+                .formulas .vector-container .vector .dimension > span {
+                    display: block;
+                    margin-bottom: 5px;
+                }
 
-            .formulas .vector-container .vector .dimension > span.scenario-btn:hover {
-                background-color: #ccc;
-                padding-left: 0.7em;
-            }
+                    .formulas .vector-container .vector .dimension > span input[type="text"] {
+                        width: 6em;
+                    }
+
+                .formulas .vector-container .vector .dimension > span.scenario-btn {
+                    transition: all 250ms;
+                    background-color: #ddd;
+                    padding: 0.5em;
+                    cursor: pointer;
+                }
+
+                .formulas .vector-container .vector .dimension > span.scenario-btn:hover {
+                    background-color: #ccc;
+                    padding-left: 0.7em;
+                }
 
 .controls {
     text-align: center;

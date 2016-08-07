@@ -8,7 +8,35 @@
     </head>
     <body>
         <div class="container">
-            <canvas id="canvas" width="800" height="600"></canvas>
+            <div class="main-view">
+                <div class="formulas">
+                    <div class="values vector-container">
+                        <h1>Configuration</h1>
+                        <div class="vector">
+                            <div class="dimension">
+                                <span>Initial velocity:</span>
+                                <span>v<sub>0</sub> = <input type="text" id="velocity"></span>
+                                <span>&theta; = <input type="text" id="angle">&deg;</span>
+                                <span></span>
+                                <span>Initial height:</span>
+                                <span>y<sub>0</sub> = <input type="text" id="height"></span>
+                                <span>Step size:</span>
+                                <span>&Delta;t = <input type="text" id="step-size">ms</span>
+                            </div>
+                        </div>
+                        <h1>Scenarios</h1>
+                        <div class="vector">
+                            <div class="dimension">
+                                <span id="default-scenario" class="scenario-btn">Default (paper)</span>
+                                <span id="horizontal-scenario" class="scenario-btn">Horizontal cannon</span>
+                                <span id="angled-scenario" class="scenario-btn">Angled cannon</span>
+                                <span id="upwards-scenario" class="scenario-btn">Upwards cannon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <canvas id="canvas" width="800" height="600"></canvas>
+            </div>
             <div class="controls">
                 <div id="play-btn" class="btn">Play</div>
                 <div id="pause-btn" class="btn">Pause</div>
@@ -16,26 +44,6 @@
                 <div id="reset-btn" class="btn">Reset</div>
             </div>
             <div class="formulas">
-                <div class="values vector-container">
-                    <h1>Configuration</h1>
-                    <div class="vector">
-                        <div class="dimension">
-                            <span>These determine initial velocity:</span>
-                            <span>v<sub>0</sub> = <input type="text" id="velocity"></span>
-                            <span>&theta; = <input type="text" id="angle">&deg;</span>
-                            <span></span>
-                            <span>This determines initial height:</span>
-                            <span>y<sub>0</sub> = <input type="text" id="height"></span>
-                            <span>How much time passes when pressing "step":</span>
-                            <span>&Delta;t = <input type="text" id="step-size">ms</span>
-                            <span>Preset scenarios:</span>
-                            <span id="default-scenario" class="scenario-btn">Default (situation in paper)</span>
-                            <span id="horizontal-scenario" class="scenario-btn">Horizontal cannon</span>
-                            <span id="angled-scenario" class="scenario-btn">Angled cannon</span>
-                            <span id="upwards-scenario" class="scenario-btn">Upwards cannon</span>
-                        </div>
-                    </div>
-                </div>
                 <div class="position vector-container">
                     <h1>Position</h1>
                     <div class="vector">

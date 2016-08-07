@@ -160,7 +160,7 @@ function recalculateInitial() {
 
 // controls
 
-window.addEventListener('resize', function resizeWindow() { opts.width = window.innerWidth; canvas.width = opts.width; tick(0); });
+window.addEventListener('resize', function resizeWindow() { opts.width = window.innerWidth; canvas.width = opts.width; clearScreen(); ball.redraw(); });
 document.getElementById('play-btn').addEventListener('click', function playBtnClick() { startSimulation(); });
 document.getElementById('pause-btn').addEventListener('click', function pauseBtnClick() { stopSimulation(); });
 document.getElementById('step-btn').addEventListener('click', function stepBtnClick() { setup(); tick(stepSize); });

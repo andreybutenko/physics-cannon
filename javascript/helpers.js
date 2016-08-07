@@ -64,7 +64,7 @@ function updateText() {
     setText('#vx0', initialBall.velocity.x);
     setText('#vx-calculated', initialBall.velocity.x + initialBall.acceleration.x * ticks);
 
-    setText('#vy',  (ball.velocity.y).toFixed(3));
+    setText('#vy',  (ball.velocity.y));
     setText('#vy0',initialBall.velocity.y);
     setText('#vy-calculated', initialBall.velocity.y + initialBall.acceleration.y * ticks);
 

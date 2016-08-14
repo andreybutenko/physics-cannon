@@ -10,9 +10,9 @@ Looking closely, you'll notice that y<sub>calculated</sub> is slightly different
 
 Pretty self-explanatory, but the actual javascript code is broken into three files.
 
-* `vars.js` contains application variables and configurable options.
-* `helpers.js` contains code not integral to the simulation, but provide some abstraction. For example, there is a Vector class, trigonometric functions, and listeners for button presses and to update formula values.
-* `simulation.js` is the real deal. It has the Ball class, the tick method, and methods to start/stop/setup the simulation. If you're just looking to see how physics is implementated, this is where you look.
+* `javascript/vars.js` contains application variables and configurable options.
+* `javascript/helpers.js` contains code not integral to the simulation, but provide some abstraction. For example, there is a Vector class, trigonometric functions, and listeners for button presses and to update formula values.
+* `javascript/simulation.js` is the real deal. It has the Ball class, the tick method, and methods to start/stop/setup the simulation. If you're just looking to see how physics is implementated, this is where you look.
 
 ## License
 
